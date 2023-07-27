@@ -1,0 +1,18 @@
+CREATE DEFINER=`root`@`localhost` FUNCTION `get_total_order_price`(p_order_id INT) RETURNS decimal(10,2)
+    DETERMINISTIC
+BEGIN
+    DECLARE v_total_price DECIMAL(10, 2);
+    
+    -- Check if the order_id exists in the orders table
+    IF (SELECT COUNT(*) FROM orders WHERE order_id = p_order_id) > 0 THEN
+        -- Calculate the total price
+        SELECT SUM(total_price) INTO v_total_price
+        FROM orders
+        WHERE order_id = p_order_id;
+        
+        RETURN v_total_price;
+    ELSE
+        -- Invalid order_id, return -1
+        RETURN -1;
+    END IF;
+END

@@ -1,0 +1,18 @@
+CREATE DEFINER=`root`@`localhost` FUNCTION `get_price_for_item`(p_item_name VARCHAR(255)) RETURNS decimal(10,2)
+    DETERMINISTIC
+BEGIN
+    DECLARE v_price DECIMAL(10, 2);
+    
+    -- Check if the item_name exists in the food_items table
+    IF (SELECT COUNT(*) FROM food_items WHERE food_name = p_item_name) > 0 THEN
+        -- Retrieve the price for the item
+        SELECT price INTO v_price
+        FROM food_items
+        WHERE food_name = p_item_name;
+        
+        RETURN v_price;
+    ELSE
+        -- Invalid item_name, return -1
+        RETURN -1;
+    END IF;
+END

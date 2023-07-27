@@ -1,0 +1,21 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_order_item`(
+  IN p_food_item VARCHAR(255),
+  IN p_quantity INT,
+  IN p_order_id INT
+)
+BEGIN
+    DECLARE v_item_id INT;
+    DECLARE v_price DECIMAL(10, 2);
+    DECLARE v_total_price DECIMAL(10, 2);
+
+    -- Get the item_id and price for the food item
+    SET v_item_id = (SELECT item_id FROM food_items WHERE food_name = p_food_item);
+    SET v_price = (SELECT get_price_for_item(p_food_item));
+
+    -- Calculate the total price for the order item
+    SET v_total_price = v_price * p_quantity;
+
+    -- Insert the order item into the orders table
+    INSERT INTO orders (order_id, item_id, quantity, total_price)
+    VALUES (p_order_id, v_item_id, p_quantity, v_total_price);
+END
