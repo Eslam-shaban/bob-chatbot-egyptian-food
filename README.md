@@ -1,4 +1,4 @@
-Chatbot for food orders online delivery using Dialogflow
+Chatbot for food orders online delivery [Egyptian Food] using Dialogflow
 ===================
 Build a chatbot for food orders online delivery using Google's Dialogflow ES. This bot supports two options,
 
@@ -10,14 +10,14 @@ Build a chatbot for food orders online delivery using Google's Dialogflow ES. Th
 ```
 Bot: How can I help you? You can say things like (1) New Order (2) Track Order
 User: New Order
-Bot: What would you like to have? You can say things like 2 pizzas, one vada pav.
-     Only order from this list: Vada Pav, Pav Bhaji, Mango Lassi, Pizza, Rava Dosa, Masala Dosa, Samosa
-User: I would like to have 2 Rava Dosa and one plate of samosa
-Bot: Added 2 Rava Dosa and 1 Samosa. Anything else?
-User: Oh yes, add one mango lassi, please
-Bot: Sure. Now we have 2 Rava Dosa, 1 Samosa and 1 Mango Lassi. Anything else?
-User: Well, you know my cholesterol came high so let's remove Samosa
-Bot: Sure. Now we have 2 Rava Dosa, and 1 Mango Lassi. Anything else?
+Bot: What would you like to have? You can say things like 2 Kunafa, one basbousa.
+     Only order from this list: ful wa tamia, feteer meshaltet, koshari, kofta, mahshi, kebda, basbousa, Roz bel laban, kunafa
+User: I would like to have 2 Roz bel laban and one plate of koshary
+Bot: Added 2 Roz bel laban and 1 koshary. Anything else?
+User: Oh yes, add one piece of basbosa, please
+Bot: Sure. Now we have 2 Roz bel laban, 1 koshary and 1 basbosa. Anything else?
+User: Well, you know my cholesterol came high so let's remove basbosa
+Bot: Sure. Now we have 2 Roz bel laban, and 1 koshary. Anything else?
 User: Nope. That's it
 Bot: Awesome. Your order is placed. Order id # 45. Your total bill is 19$ which you can pay at the time of delivery!
 ```
@@ -30,7 +30,7 @@ Bot: What is your order id?
 User: 45
 Bot: Order # 45, is in transit
 User: How about 41
-Bot: ORder # 41 is delivered
+Bot: Order # 41 is delivered
 ```
 
 
